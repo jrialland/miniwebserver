@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>net.jr</groupId>
+	<artifactId>miniwebserver</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<java.version>1.7</java.version>
+		<default.encoding>utf-8</default.encoding>
+		<project.build.sourceEncoding>${default.encoding}</project.build.sourceEncoding>
+		<project.report.outputEncoding>${default.encoding}</project.report.outputEncoding>
+		<project.mainclass>net.jr.http.webserver.WebServer</project.mainclass>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+                    <debug>false</debug>
+                    <optimize>true</optimize>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+				  <archive>
+					<manifest>
+					  <mainClass>${project.mainclass}</mainClass>
+					</manifest>
+				  </archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
